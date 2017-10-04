@@ -1,0 +1,21 @@
+#This script install IIS from scratch on server 
+
+Import-Module ServerManager
+# What funcyion IIS should have 
+Add-WindowsFeature Web-Common-Http, `
+    Web-Default-Doc,
+    Web-Dir-Browsing, `
+    Web-Static-Content, `
+    Web-Stat-Compression, `
+    Web-CertProvider, `
+    Web-ASP, `
+    Web-Asp-Net45
+#Delete all files from root IIS folder
+Remove-Item C:\inetpub\wwwroot\* -Recurse
+#Copy new content to IIS root folder 
+Copy-Item -Path C:\temp\webfiles\* `
+    -Destination C:\inetpub\wwwroot `
+    -Recurse 
+%Create backup of IIS files, 
+Backup-WebConfiguration -Name IISConfigBackup
+
