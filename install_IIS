@@ -1,7 +1,7 @@
 #This script install IIS from scratch on server 
 
 Import-Module ServerManager
-# What funcyion IIS should have 
+# What function IIS should have 
 Add-WindowsFeature Web-Common-Http, `
     Web-Default-Doc,
     Web-Dir-Browsing, `
