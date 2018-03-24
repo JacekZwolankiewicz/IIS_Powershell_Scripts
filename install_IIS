@@ -16,6 +16,6 @@ Remove-Item C:\inetpub\wwwroot\* -Recurse
 Copy-Item -Path C:\temp\webfiles\* `
     -Destination C:\inetpub\wwwroot `
     -Recurse 
-%Create backup of IIS files, 
+#Create backup of IIS files, 
 Backup-WebConfiguration -Name IISConfigBackup
 
